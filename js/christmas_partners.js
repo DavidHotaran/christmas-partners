@@ -48,7 +48,7 @@ $(document).ready(function(){
         console.assert(partners.length === 13)
         for(const i of partners){
             console.log(i)
-            $("#partners").append(`<p>${i}</p>`)
+            $("#partners").append(`<p class="fs-4 fw-bold">${i}</p>`)
         }
         $("#get_partners").attr("disabled", true);
     });

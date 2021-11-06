@@ -1,0 +1,8 @@
+body{
+    color:#004D40
+}
+
+#main{
+    background-image: url("../christmas.png");
+    background-attachment: fixed;
+}
