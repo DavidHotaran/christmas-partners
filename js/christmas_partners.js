@@ -11,7 +11,6 @@ document.getElementById("add-btn").addEventListener('click', () => {
         people.push({ 'name': name, spouse: relationship === '' ? 'none' : relationship });
         document.getElementById("name").value = '';
         document.getElementById("relationship").value = '';
-        document.getElementById("name").style.borderColor = 'gray';
         let newElement = document.createElement("p");
         newElement.className = '';
         newElement.innerText = `Name: ${name} - Spouse: ${relationship === '' ? 'none' : relationship}`
@@ -47,6 +46,8 @@ document.getElementById("get-partners").addEventListener('click', () => {
         newElement.innerText = partner;
         document.getElementById("partners").append(newElement);
     });
+    document.getElementById("get-partners").setAttribute("disabled",true);
+    document.getElementById("get-partners").classList.add('btn-disable');
 });
 
 document.getElementById('reset').addEventListener('click', () => {
@@ -54,6 +55,8 @@ document.getElementById('reset').addEventListener('click', () => {
     document.getElementById("relationship").value = '';
     document.getElementById("participants").innerText = "";
     document.getElementById('partners-container').classList.add('hide');
+    document.getElementById("get-partners").removeAttribute("disabled");
+    document.getElementById("get-partners").classList.remove('btn-disable');
     people = [];
     let partners = document.getElementById("partners");
     while (partners.hasChildNodes()) {
